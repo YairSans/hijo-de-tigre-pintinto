@@ -27,6 +27,7 @@ p{font-size:15px;line-height:1.8;color:#504946}.quote{font-family:Georgia,serif;
 .tasting{display:grid;grid-template-columns:repeat(3,1fr);margin-top:45px;border-top:1px solid #5a5050;border-bottom:1px solid #5a5050}.taste{padding:35px 25px;border-right:1px solid #5a5050}.taste:last-child{border:0}.taste small{color:#d5ad79;letter-spacing:2px;text-transform:uppercase}.taste h3{font-family:Georgia,serif;font-size:30px;margin:10px 0}
 .products{background:#eee5da}.productgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:45px}.product{background:#fffdf9;border-radius:22px;text-align:center;padding:35px;border:1px solid #e3d8cc}.ml{font-family:Georgia,serif;color:var(--vino);font-size:52px}.product h3{margin:4px 0;text-transform:uppercase;letter-spacing:3px}
 .cta{text-align:center;background:var(--vino);color:white}.cta h2{color:white}.cta p{color:#f4deda;max-width:650px;margin:0 auto 25px}.social a{display:inline-block;color:white;border:1px solid rgba(255,255,255,.45);border-radius:25px;padding:11px 17px;margin:8px;font-size:11px;text-decoration:none}
+.product-image {display: block;width: 100%;max-width: 280px;height: 280px;object-fit: contain;margin: 30px auto 0;}
 footer{background:#151111;color:#cfc3bb;padding:28px 7%;display:flex;justify-content:space-between;font-size:11px;gap:20px;flex-wrap:wrap}
 @media(max-width:800px){nav{position:relative}nav .links{display:none}.hero{grid-template-columns:1fr;text-align:center;padding:55px 6%}.lead{margin:0 auto 20px}.visual{margin-top:30px}.visual img{width:90%}.cards,.productgrid,.tasting{grid-template-columns:1fr}.taste{border-right:0;border-bottom:1px solid #5a5050}.quote{font-size:27px}section{padding:75px 6%}}
 </style>
@@ -57,7 +58,7 @@ footer{background:#151111;color:#cfc3bb;padding:28px 7%;display:flex;justify-con
   <h2>Creamos el sabor.<br>Tú creas el momento</h2>
   <p>Elaborada artesanalmente a base de flor de jamaica, nuestra propuesta ofrece una alternativa diferente a las bebidas tradicionales, convirtiendo cualquier momento en una experiencia memorable.</p>
   <div class="quote">“Una propuesta diferente para quienes buscan algo auténtico, elegante y memorable.”</div>
-  <h2>¿Por qué Hijo de Tigre Pintinto?</h2>
+  <h2><br>¿Por qué Hijo de Tigre Pintinto?</h2>
   <div class="cards">
     <div class="card"><div class="num">01</div><h3>Elaborado con la naturaleza de la Jamaica</h3><p>El ingrediente que da identidad y su característico tono rubí.</p></div>
     <div class="card"><div class="num">02</div><h3>Hecho en México</h3><p>Producto artesanal con identidad propia y una propuesta diferente.</p></div>
@@ -79,12 +80,28 @@ footer{background:#151111;color:#cfc3bb;padding:28px 7%;display:flex;justify-con
 
 <section class="products" id="presentaciones">
   <div class="eyebrow">Presentaciones</div>
-  <h2>Para cada ocación mereces algo unico</h2>
+  <h2>Hay momentos que merecen algo diferente.</h2>
   <p>Disponible para venta por pieza o por caja de 12 unidades.</p>
   <div class="productgrid">
-    <div class="product"><div class="ml">375</div><h3>ml</h3><p>Ideal para regalar, probar o llevar contigo.</p></div>
-    <!--<div class="product"><div class="ml">500</div><h3>ml</h3><p>El equilibrio perfecto para compartir.</p></div> -->
-    <div class="product"><div class="ml">750</div><h3>ml</h3><p>La presentación protagonista para celebrar.</p></div>
+    <!-- PRESENTACIÓN 375 ML -->
+    <div class="product">
+      <div class="ml">375</div>
+      <h3>ml</h3><p>Ideal para regalar, probar o llevar contigo.</p>
+      <img 
+        src="img/pintinto-375ml.png" 
+        alt="Hijo de Tigre Pintinto 375 ml"
+        class="product-image">
+    </div>
+
+    <!-- PRESENTACIÓN 750 ML -->
+    <div class="product">
+      <div class="ml">750</div>
+      <h3>ml</h3><p> La presentación protagonista para celebrar.</p>
+      <img 
+        src="img/pintinto-750ml.png" 
+        alt="Hijo de Tigre Pintinto 750 ml"
+        class="product-image">
+    </div>
   </div>
 </section>
 
