@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hijo de Tigre Pintinto — Elixir de Jamaica">
+<title>Hijo de Tigre Pintinto</title>
+<style>
+:root{--vino:#8d171d;--vino2:#b3262d;--crema:#f8f4ee;--negro:#211b1b;--dorado:#b18a5b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--crema);color:#211b1b;font-family:Arial,Helvetica,sans-serif}
+nav{position:sticky;top:0;z-index:10;background:rgba(248,244,238,.96);border-bottom:1px solid #e5dcd2;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Georgia,serif;font-size:22px;font-weight:bold;letter-spacing:2px}.logo b{color:var(--vino)}
+nav a{margin-left:22px;font-size:12px;text-decoration:none;color:#333;text-transform:uppercase;letter-spacing:1px}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 7%;gap:30px}
+.kicker{color:var(--vino);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+h1{font-family:Georgia,serif;font-size:clamp(55px,8vw,100px);line-height:.88;margin:0 0 25px}.wine{color:var(--vino);font-style:italic}
+.lead{font-family:Georgia,serif;font-size:25px;line-height:1.25;max-width:560px}
+.btn{display:inline-block;background:var(--vino);color:white;padding:15px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:12px;letter-spacing:1px;margin:10px 8px 0 0}
+.btn.light{background:white;color:var(--vino);border:1px solid #ddd}
+.visual{text-align:center;position:relative}.visual:before{content:"";position:absolute;width:min(560px,90vw);aspect-ratio:1;border:1px solid var(--vino);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,#fff,#eee3d8);z-index:0}
+.visual img{position:relative;z-index:1;width:min(520px,90%);max-height:700px;object-fit:contain;filter:drop-shadow(0 25px 25px rgba(0,0,0,.18))}
+section{padding:100px 7%}.dark{background:var(--negro);color:#f7eee6}.dark p{color:#d8ccc2}.eyebrow{color:var(--vino);font-size:11px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}.dark .eyebrow{color:#d5ad79}
+h2{font-family:Georgia,serif;font-size:clamp(42px,5vw,68px);line-height:1;margin:15px 0 25px}
+p{font-size:15px;line-height:1.8;color:#504946}.quote{font-family:Georgia,serif;font-size:31px;line-height:1.2;border-left:3px solid var(--vino);padding-left:25px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:45px}.card{background:white;border:1px solid #e9e0d6;border-radius:20px;padding:30px}.card .num{font-size:24px;color:var(--vino)}.card h3{font-family:Georgia,serif;font-size:27px;margin:12px 0 5px}
+.tasting{display:grid;grid-template-columns:repeat(3,1fr);margin-top:45px;border-top:1px solid #5a5050;border-bottom:1px solid #5a5050}.taste{padding:35px 25px;border-right:1px solid #5a5050}.taste:last-child{border:0}.taste small{color:#d5ad79;letter-spacing:2px;text-transform:uppercase}.taste h3{font-family:Georgia,serif;font-size:30px;margin:10px 0}
+.products{background:#eee5da}.productgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:45px}.product{background:#fffdf9;border-radius:22px;text-align:center;padding:35px;border:1px solid #e3d8cc}.ml{font-family:Georgia,serif;color:var(--vino);font-size:52px}.product h3{margin:4px 0;text-transform:uppercase;letter-spacing:3px}
+.cta{text-align:center;background:var(--vino);color:white}.cta h2{color:white}.cta p{color:#f4deda;max-width:650px;margin:0 auto 25px}.social a{display:inline-block;color:white;border:1px solid rgba(255,255,255,.45);border-radius:25px;padding:11px 17px;margin:8px;font-size:11px;text-decoration:none}
+footer{background:#151111;color:#cfc3bb;padding:28px 7%;display:flex;justify-content:space-between;font-size:11px;gap:20px;flex-wrap:wrap}
+@media(max-width:800px){nav{position:relative}nav .links{display:none}.hero{grid-template-columns:1fr;text-align:center;padding:55px 6%}.lead{margin:0 auto 20px}.visual{margin-top:30px}.visual img{width:90%}.cards,.productgrid,.tasting{grid-template-columns:1fr}.taste{border-right:0;border-bottom:1px solid #5a5050}.quote{font-size:27px}section{padding:75px 6%}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">HIJO DE TIGRE <b>Pintinto</b></div>
+  <div class="links">
+    <a href="#esencia">Esencia</a><a href="#experiencia">Experiencia</a><a href="#presentaciones">Presentaciones</a><a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div>
+    <div class="kicker">Elixir de Jamaica · Hecho en México</div>
+    <h1>Tu momento.<br><span class="wine">Tu Pintinto.</span></h1>
+    <div class="lead">Una experiencia diferente para cada ocasión.</div>
+    <p>Hijo de Tigre Pintinto nace para quienes buscan algo auténtico, elegante y diferente.</p>
+    <a class="btn" href="#contacto">Quiero mi Pintinto</a>
+    <a class="btn light" href="#esencia">Conoce la marca</a>
+  </div>
+  <div class="visual"><img src="pintinto-botella.png" alt="Hijo de Tigre Pintinto, Elixir de Jamaica"></div>
+</section>
+
+<section id="esencia">
+  <div class="eyebrow">Nuestra esencia</div>
+  <h2>No vendemos una botella.<br>Creemos momentos.</h2>
+  <p>Elaborada artesanalmente a base de flor de jamaica, nuestra propuesta ofrece una alternativa diferente a las bebidas tradicionales, convirtiendo cualquier momento en una experiencia memorable.</p>
+  <div class="quote">“Una propuesta diferente para quienes buscan algo auténtico, elegante y memorable.”</div>
+  <div class="cards">
+    <div class="card"><div class="num">01</div><h3>Flor de Jamaica</h3><p>El ingrediente que da identidad a Pintinto y su característico tono rubí.</p></div>
+    <div class="card"><div class="num">02</div><h3>Hecho en México</h3><p>Producto artesanal con identidad propia y una propuesta diferente.</p></div>
+    <div class="card"><div class="num">03</div><h3>Ideal para regalar</h3><p>Una presentación que genera recuerdo y diferenciación.</p></div>
+  </div>
+</section>
+
+<section class="dark" id="experiencia">
+  <div class="eyebrow">Notas de cata & perfil</div>
+  <h2>Una experiencia para descubrir.</h2>
+  <p>Su presencia visual profunda abre la experiencia; su perfil de jamaica aporta una personalidad suave, afrutada y sorprendente.</p>
+  <div class="tasting">
+    <div class="taste"><small>Vista</small><h3>Rojo rubí</h3><p>Una presencia intensa y elegante.</p></div>
+    <div class="taste"><small>Nariz</small><h3>Jamaica & frutos</h3><p>Aromas que invitan a acercarse y descubrir.</p></div>
+    <div class="taste"><small>Boca</small><h3>Suave & afrutado</h3><p>Un perfil diferente para disfrutar con calma.</p></div>
+  </div>
+</section>
+
+<section class="products" id="presentaciones">
+  <div class="eyebrow">Presentaciones</div>
+  <h2>Un Pintinto para cada momento.</h2>
+  <p>Disponible para venta por pieza o por caja de 12 unidades.</p>
+  <div class="productgrid">
+    <div class="product"><div class="ml">375</div><h3>ml</h3><p>Ideal para regalar, probar o llevar contigo.</p></div>
+    <div class="product"><div class="ml">500</div><h3>ml</h3><p>El equilibrio perfecto para compartir.</p></div>
+    <div class="product"><div class="ml">750</div><h3>ml</h3><p>La presentación protagonista para celebrar.</p></div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="eyebrow" style="color:#e5bd9a">Hazlo Pintinto</div>
+  <h2>Tu momento merece algo diferente.</h2>
+  <p>Pregunta por disponibilidad, presentaciones y venta por pieza o caja.</p>
+  <a class="btn light" href="https://wa.me/525522964642" target="_blank">WhatsApp · 55 2296 4642</a>
+  <div class="social">
+    <a href="https://www.facebook.com/search/top?q=Hijo%20de%20Tigre%20Pintinto" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/explore/search/keyword/?q=Hijo%20de%20Tigre%20Pintinto" target="_blank">Instagram</a>
+  </div>
+</section>
+
+<footer><span>HIJO DE TIGRE PINTINTO · ELIXIR DE JAMAICA</span><span>BEBE CON RESPONSABILIDAD · SOLO PARA MAYORES DE EDAD</span></footer>
+</body>
+</html>
