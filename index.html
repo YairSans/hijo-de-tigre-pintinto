@@ -107,6 +107,17 @@ nav{
     display: block;
     flex: 0 0 24px;
 }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(247, 243, 237, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(120, 20, 20, 0.10);
+}
+   
 nav a{
     margin-left:22px;
 
@@ -804,14 +815,16 @@ footer a:hover{
    CELULAR
 ========================================================= */
 
-@media(max-width:800px){
+@media(max-width:768px){
 
-    nav{
-
-        position:relative;
-
-        padding:
-            15px 6%;
+     nav{
+        position:sticky;
+        top:0;
+        z-index:1000;
+        padding:15px 6%;
+        background:rgba(247,243,237,0.96);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
     }
 
     .logo{
