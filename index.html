@@ -76,33 +76,31 @@ nav{
     backdrop-filter:blur(8px);
 }
 
-.garrita-fija {
-    position: fixed;
-    top: 13px;
-    left: 45px;
-    width: 30px;
-    height: 30px;
-    z-index: 99999;
-    pointer-events: none;
+.logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 7px;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.garrita-fija img {
-    width: 100%;
-    height: 100%;
+.logo-garrita {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
     object-fit: contain;
+    display: block;
+    flex-shrink: 0;
 }
 
-.logo{
-    font-family:Georgia,serif;
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:2px;
+.logo b {
+    color: var(--vino);
 }
-
-.logo b{
-    color:var(--vino);
-}
-
 nav a{
     margin-left:22px;
 
