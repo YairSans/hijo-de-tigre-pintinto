@@ -3,182 +3,1669 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Hijo de Tigre Pintinto — Elixir de Jamaica">
+
+<meta name="description"
+content="Hijo de Tigre Pintinto — Elixir de Jamaica">
+
 <title>Hijo de Tigre Pintinto</title>
+
 <style>
-:root{--vino:#8d171d;--vino2:#b3262d;--crema:#f8f4ee;--negro:#211b1b;--dorado:#b18a5b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--crema);color:#211b1b;font-family:Arial,Helvetica,sans-serif}
-nav{position:sticky;top:0;z-index:10;background:rgba(248,244,238,.96);border-bottom:1px solid #e5dcd2;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:Georgia,serif;font-size:22px;font-weight:bold;letter-spacing:2px}.logo b{color:var(--vino)}
-nav a{margin-left:22px;font-size:12px;text-decoration:none;color:#333;text-transform:uppercase;letter-spacing:1px}
-.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 7%;gap:30px}
-.kicker{color:var(--vino);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
-h1{font-family:Georgia,serif;font-size:clamp(55px,8vw,100px);line-height:.88;margin:0 0 25px}.wine{color:var(--vino);font-style:italic}
-.lead{font-family:Georgia,serif;font-size:25px;line-height:1.25;max-width:560px}
-.btn{display:inline-block;background:var(--vino);color:white;padding:15px 24px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:12px;letter-spacing:1px;margin:10px 8px 0 0}
-.btn.light{background:white;color:var(--vino);border:1px solid #ddd}
-.visual {
-    width: min(520px, 90vw);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    background: #f7f2eb;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+    --vino:#8d171d;
+    --vino2:#b3262d;
+    --crema:#f8f4ee;
+    --negro:#211b1b;
+    --dorado:#b18a5b;
+    --blanco:#fffdf9;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--crema);
+    color:var(--negro);
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:rgba(248,244,238,.96);
+
+    border-bottom:1px solid #e5dcd2;
+
+    padding:18px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    backdrop-filter:blur(8px);
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo b{
+    color:var(--vino);
+}
+
+nav a{
+    margin-left:22px;
+
+    font-size:12px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    transition:.3s ease;
+}
+
+nav a:hover{
+    color:var(--vino);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:calc(100vh - 70px);
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    padding:70px 7%;
+
+    gap:50px;
+
+    overflow:hidden;
+}
+
+
+/* Texto */
+
+.kicker{
+
+    color:var(--vino);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(55px,8vw,100px);
+
+    line-height:.88;
+
+    margin:0 0 25px;
+}
+
+.wine{
+
+    color:var(--vino);
+
+    font-style:italic;
+}
+
+.lead{
+
+    font-family:Georgia,serif;
+
+    font-size:25px;
+
+    line-height:1.25;
+
+    max-width:560px;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.btn{
+
+    display:inline-block;
+
+    background:var(--vino);
+
+    color:white;
+
+    padding:15px 24px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    margin:10px 8px 0 0;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--vino2);
+
+    box-shadow:0 10px 25px rgba(141,23,29,.20);
+}
+
+.btn.light{
+
+    background:white;
+
+    color:var(--vino);
+
+    border:1px solid #ddd;
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   IMPORTANTE:
+   La imagen YA contiene su círculo.
+   No agregamos otro círculo.
+========================================================= */
+
+.visual{
+
+    width:100%;
+
+    max-width:560px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:visible;
+
+    background:transparent;
+}
+
+
+/*
+   La imagen mantiene sus proporciones.
+   mix-blend-mode ayuda a integrar el fondo blanco
+   de la imagen con el fondo crema de la página.
+*/
+
+.visual img{
+
+    display:block;
+
+    width:100%;
+
+    max-width:560px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 25px 25px rgba(0,0,0,.14));
+
+    mix-blend-mode:multiply;
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+}
+
+.visual:hover img{
+
+    transform:scale(1.025);
+
+    filter:
+        drop-shadow(0 30px 35px rgba(0,0,0,.18));
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+section{
+
+    padding:100px 7%;
+
+}
+
+.eyebrow{
+
+    color:var(--vino);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.dark .eyebrow{
+
+    color:#d5ad79;
+}
+
+h2{
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(42px,5vw,68px);
+
+    line-height:1;
+
+    margin:15px 0 25px;
+}
+
+p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#504946;
+}
+
+
+/* =========================================================
+   ESENCIA
+========================================================= */
+
+.quote{
+
+    font-family:Georgia,serif;
+
+    font-size:31px;
+
+    line-height:1.2;
+
+    border-left:3px solid var(--vino);
+
+    padding-left:25px;
+
+    margin-top:35px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:20px;
+
+    margin-top:45px;
+}
+
+.card{
+
+    background:white;
+
+    border:1px solid #e9e0d6;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.card:hover{
+
+    transform:translateY(-7px);
+
     box-shadow:
-        0 30px 70px rgba(0, 0, 0, 0.14),
-        0 10px 30px rgba(145, 20, 25, 0.10);
-    isolation: isolate;
+        0 20px 40px rgba(40,20,20,.08);
 }
 
-.visual::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border: 1px solid rgba(150, 20, 25, 0.45);
-    border-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
+.card .num{
+
+    font-size:24px;
+
+    color:var(--vino);
 }
 
-.visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 50%;
-    transform: scale(1.08);
-    transition: transform 0.7s ease;
+.card h3{
+
+    font-family:Georgia,serif;
+
+    font-size:27px;
+
+    margin:12px 0 5px;
 }
 
-.visual:hover img {
-    transform: scale(1.12);
-}.productgrid{grid-template-columns:repeat(auto-fit,minmax(220px,280px));justify-content:center;align-items:stretch}
-section{padding:100px 7%}.dark{background:var(--negro);color:#f7eee6}.dark p{color:#d8ccc2}.eyebrow{color:var(--vino);font-size:11px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}.dark .eyebrow{color:#d5ad79}
-h2{font-family:Georgia,serif;font-size:clamp(42px,5vw,68px);line-height:1;margin:15px 0 25px}
-p{font-size:15px;line-height:1.8;color:#504946}.quote{font-family:Georgia,serif;font-size:31px;line-height:1.2;border-left:3px solid var(--vino);padding-left:25px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:45px}.card{background:white;border:1px solid #e9e0d6;border-radius:20px;padding:30px}.card .num{font-size:24px;color:var(--vino)}.card h3{font-family:Georgia,serif;font-size:27px;margin:12px 0 5px}
-.tasting{display:grid;grid-template-columns:repeat(3,1fr);margin-top:45px;border-top:1px solid #5a5050;border-bottom:1px solid #5a5050}.taste{padding:35px 25px;border-right:1px solid #5a5050}.taste:last-child{border:0}.taste small{color:#d5ad79;letter-spacing:2px;text-transform:uppercase}.taste h3{font-family:Georgia,serif;font-size:30px;margin:10px 0}
-.products{background:#eee5da}.productgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:45px}.product{background:#fffdf9;border-radius:22px;text-align:center;padding:35px;border:1px solid #e3d8cc}.ml{font-family:Georgia,serif;color:var(--vino);font-size:52px}.product h3{margin:4px 0;text-transform:uppercase;letter-spacing:3px}
-.cta{text-align:center;background:var(--vino);color:white}.cta h2{color:white}.cta p{color:#f4deda;max-width:650px;margin:0 auto 25px}.social a{display:inline-block;color:white;border:1px solid rgba(255,255,255,.45);border-radius:25px;padding:11px 17px;margin:8px;font-size:11px;text-decoration:none}
-.product-image {display: block;width: 100%;max-width: 280px;height: 280px;object-fit: contain;margin: 30px auto 0;}
-footer{background:#151111;color:#cfc3bb;padding:28px 7%;display:flex;justify-content:space-between;font-size:11px;gap:20px;flex-wrap:wrap}
-@media(max-width:800px){nav{position:relative}nav .links{display:none}.hero{grid-template-columns:1fr;text-align:center;padding:55px 6%}.lead{margin:0 auto 20px}.visual{margin-top:30px}.visual img{width:90%}.cards,.productgrid,.tasting{grid-template-columns:1fr}.taste{border-right:0;border-bottom:1px solid #5a5050}.quote{font-size:27px}section{padding:75px 6%}}
+
+/* =========================================================
+   EXPERIENCIA / PROCESO
+========================================================= */
+
+.dark{
+
+    background:var(--negro);
+
+    color:#f7eee6;
+}
+
+.dark p{
+
+    color:#d8ccc2;
+}
+
+
+/* =========================================================
+   TASTING
+========================================================= */
+
+.tasting{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    margin-top:45px;
+
+    border-top:1px solid #5a5050;
+
+    border-bottom:1px solid #5a5050;
+}
+
+.taste{
+
+    padding:35px 25px;
+
+    border-right:1px solid #5a5050;
+
+    transition:
+        background .3s ease;
+}
+
+.taste:hover{
+
+    background:rgba(255,255,255,.025);
+}
+
+.taste:last-child{
+
+    border:0;
+}
+
+.taste small{
+
+    color:#d5ad79;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.taste h3{
+
+    font-family:Georgia,serif;
+
+    font-size:30px;
+
+    margin:10px 0;
+}
+
+
+/* =========================================================
+   PRESENTACIONES
+========================================================= */
+
+.products{
+
+    background:#eee5da;
+}
+
+
+/*
+   Centrado correcto de las tarjetas
+*/
+
+.productgrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(260px,380px));
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:30px;
+
+    margin-top:45px;
+}
+
+.product{
+
+    background:#fffdf9;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    padding:35px 25px 40px;
+
+    border:1px solid #e3d8cc;
+
+    min-height:520px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.product:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 20px 40px rgba(50,30,20,.10);
+}
+
+.ml{
+
+    font-family:Georgia,serif;
+
+    color:var(--vino);
+
+    font-size:52px;
+
+    line-height:1;
+}
+
+.product h3{
+
+    margin:4px 0;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+}
+
+.product p{
+
+    margin-bottom:5px;
+}
+
+
+/* =========================================================
+   IMÁGENES DE PRODUCTOS
+========================================================= */
+
+.product-image{
+
+    display:block;
+
+    width:100%;
+
+    max-width:300px;
+
+    height:300px;
+
+    object-fit:contain;
+
+    margin:25px auto 0;
+
+    mix-blend-mode:multiply;
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+}
+
+.product:hover .product-image{
+
+    transform:scale(1.035);
+
+    filter:
+        drop-shadow(0 15px 15px rgba(0,0,0,.13));
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.cta{
+
+    text-align:center;
+
+    background:var(--vino);
+
+    color:white;
+}
+
+.cta h2{
+
+    color:white;
+}
+
+.cta p{
+
+    color:#f4deda;
+
+    max-width:650px;
+
+    margin:0 auto 25px;
+}
+
+
+/* =========================================================
+   REDES
+========================================================= */
+
+.social{
+
+    margin-top:20px;
+}
+
+.social a{
+
+    display:inline-block;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:25px;
+
+    padding:11px 17px;
+
+    margin:8px;
+
+    font-size:11px;
+
+    text-decoration:none;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.social a:hover{
+
+    background:rgba(255,255,255,.12);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#151111;
+
+    color:#cfc3bb;
+
+    padding:28px 7%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:11px;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+footer a{
+
+    color:#cfc3bb;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+footer a:hover{
+
+    color:white;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+.hero > div:first-child{
+
+    animation:
+        aparecer .9s ease both;
+}
+
+.visual{
+
+    animation:
+        aparecer 1.1s ease .15s both;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero{
+
+        gap:30px;
+
+        padding-left:6%;
+
+        padding-right:6%;
+    }
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .productgrid{
+
+        grid-template-columns:
+            repeat(2,minmax(240px,350px));
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media(max-width:800px){
+
+    nav{
+
+        position:relative;
+
+        padding:
+            15px 6%;
+    }
+
+    .logo{
+
+        font-size:17px;
+
+        letter-spacing:1.5px;
+    }
+
+    nav .links{
+
+        display:none;
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        min-height:auto;
+
+        padding:
+            55px 6%
+            70px;
+
+        gap:20px;
+    }
+
+    .hero > div:first-child{
+
+        width:100%;
+    }
+
+    .kicker{
+
+        font-size:10px;
+
+        letter-spacing:2px;
+    }
+
+    h1{
+
+        font-size:
+            clamp(52px,15vw,78px);
+    }
+
+    .lead{
+
+        font-size:21px;
+
+        margin:
+            0 auto 20px;
+    }
+
+    .hero p{
+
+        max-width:500px;
+
+        margin-left:auto;
+
+        margin-right:auto;
+    }
+
+
+    /* IMAGEN PRINCIPAL */
+
+    .visual{
+
+        width:100%;
+
+        max-width:520px;
+
+        margin:10px auto 0;
+
+        padding:0;
+    }
+
+    .visual img{
+
+        width:100%;
+
+        max-width:520px;
+
+        height:auto;
+
+        transform:none;
+    }
+
+    .visual:hover img{
+
+        transform:none;
+    }
+
+
+    /* SECCIONES */
+
+    section{
+
+        padding:
+            75px 6%;
+    }
+
+    h2{
+
+        font-size:
+            clamp(38px,11vw,55px);
+    }
+
+
+    /* CARDS */
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+    .card{
+
+        padding:27px;
+    }
+
+
+    /* TASTING / PROCESO */
+
+    .tasting{
+
+        grid-template-columns:1fr;
+
+        margin-top:35px;
+    }
+
+    .taste{
+
+        border-right:0;
+
+        border-bottom:
+            1px solid #5a5050;
+
+        padding:
+            30px 10px;
+    }
+
+    .taste:last-child{
+
+        border-bottom:0;
+    }
+
+
+    /* FRASE */
+
+    .quote{
+
+        font-size:26px;
+
+        padding-left:18px;
+    }
+
+
+    /* PRESENTACIONES */
+
+    .productgrid{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+        gap:20px;
+    }
+
+    .product{
+
+        width:100%;
+
+        max-width:390px;
+
+        min-height:auto;
+
+        padding:
+            35px 20px 40px;
+    }
+
+    .product-image{
+
+        width:100%;
+
+        max-width:300px;
+
+        height:auto;
+
+        max-height:330px;
+
+        margin-top:25px;
+    }
+
+
+    /* BOTONES */
+
+    .btn{
+
+        margin-right:4px;
+
+        margin-left:4px;
+
+        padding:
+            14px 19px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:
+            30px 6%;
+
+        gap:12px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media(max-width:420px){
+
+    .hero{
+
+        padding-top:45px;
+    }
+
+    .logo{
+
+        font-size:15px;
+    }
+
+    .kicker{
+
+        font-size:9px;
+
+        letter-spacing:1.8px;
+    }
+
+    h1{
+
+        font-size:50px;
+    }
+
+    .lead{
+
+        font-size:19px;
+    }
+
+    .visual{
+
+        width:100%;
+    }
+
+    .product{
+
+        border-radius:18px;
+    }
+
+    .ml{
+
+        font-size:46px;
+    }
+
+    .product-image{
+
+        max-height:290px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   Accesibilidad
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+    }
+}
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
+
 <nav>
-  <div class="logo">HIJO DE TIGRE <b>Pintinto</b></div>
-  <div class="links">
-    <a href="#esencia">Esencia</a><a href="#experiencia">Experiencia</a><a href="#presentaciones">Presentaciones</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a>
-  </div>
+
+    <div class="logo">
+        HIJO DE TIGRE <b>Pintinto</b>
+    </div>
+
+    <div class="links">
+
+        <a href="#esencia">Esencia</a>
+
+        <a href="#experiencia">Experiencia</a>
+
+        <a href="#presentaciones">Presentaciones</a>
+
+        <a href="#proceso">Proceso</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </div>
+
 </nav>
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero" id="inicio">
-  <div>
-    <div class="kicker">Elixir de Jamaica · Hecho en México</div>
-    <h1>Tu momento.<br><span class="wine">Tu Pintinto.</span></h1>
-    <div class="lead">Una experiencia diferente para cada ocasión.</div>
-    <p>Hijo de Tigre Pintinto nace para quienes buscan algo auténtico, elegante y diferente.</p>
-    <a class="btn" href="#contacto">Quiero mi Pintinto</a>
-    <a class="btn light" href="#esencia">Conoce la marca</a>
-  </div>
-  <div class="visual"><img src="imagenes/pintinto-principal.jpeg" alt="Hijo de Tigre Pintinto, Elixir de Jamaica"></div>
+
+    <div>
+
+        <div class="kicker">
+            Elixir de Jamaica · Hecho en México
+        </div>
+
+        <h1>
+            Tu momento.
+            <br>
+            <span class="wine">
+                Tu Pintinto.
+            </span>
+        </h1>
+
+        <div class="lead">
+            Una experiencia diferente para cada ocasión.
+        </div>
+
+        <p>
+            Hijo de Tigre Pintinto nace para quienes buscan
+            algo auténtico, elegante y diferente.
+        </p>
+
+        <a class="btn" href="#contacto">
+            Quiero mi Pintinto
+        </a>
+
+        <a class="btn light" href="#esencia">
+            Conoce la marca
+        </a>
+
+    </div>
+
+
+    <!-- IMAGEN PRINCIPAL -->
+
+    <div class="visual">
+
+        <img
+            src="imagenes/pintinto-principal.jpeg"
+            alt="Hijo de Tigre Pintinto, Elixir de Jamaica"
+        >
+
+    </div>
+
 </section>
+
+
+<!-- =====================================================
+     NUESTRA ESENCIA
+===================================================== -->
 
 <section id="esencia">
-  <div class="eyebrow">Nuestra esencia</div>
-  <!--<h2>No vendemos una botella.<br>Creamos momentos.</h2>-->
-  <h2>Creamos el sabor.<br>Tú creas el momento</h2>
-  <p>Elaborada artesanalmente a base de flor de jamaica, nuestra propuesta ofrece una alternativa diferente a las bebidas tradicionales, convirtiendo cualquier momento en una experiencia memorable.</p>
-  <div class="quote">“Una propuesta diferente para quienes buscan algo auténtico, elegante y memorable.”</div>
-  <h2><br>¿Por qué Hijo de Tigre Pintinto?</h2>
-  <div class="cards">
-    <div class="card"><div class="num">01</div><h3>Elaborado con la naturaleza de la Jamaica</h3><p>El ingrediente que da identidad y su característico tono rubí.</p></div>
-    <div class="card"><div class="num">02</div><h3>Hecho en México</h3><p>Producto artesanal con identidad propia y una propuesta diferente.</p></div>
-    <div class="card"><div class="num">03</div><h3>Ideal para regalar o compartir</h3><p>Una imagen que genera recuerdos y diferenciación.</p></div>
-    <div class="card"><div class="num">42</div><h3>Sabor unico</h3><p>Sabor suave, afrutado y sorprendente desde la primera copa.</p></div>
-  </div>
+
+    <div class="eyebrow">
+        Nuestra esencia
+    </div>
+
+    <h2>
+        Creamos el sabor.
+        <br>
+        Tú creas el momento
+    </h2>
+
+    <p>
+        Elaborada artesanalmente a base de flor de jamaica,
+        nuestra propuesta ofrece una alternativa diferente
+        a las bebidas tradicionales, convirtiendo cualquier
+        momento en una experiencia memorable.
+    </p>
+
+    <div class="quote">
+        “Una propuesta diferente para quienes buscan algo
+        auténtico, elegante y memorable.”
+    </div>
+
+
+    <h2>
+        <br>
+        ¿Por qué Hijo de Tigre Pintinto?
+    </h2>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="num">
+                01
+            </div>
+
+            <h3>
+                Elaborado con la naturaleza de la Jamaica
+            </h3>
+
+            <p>
+                El ingrediente que da identidad y su
+                característico tono rubí.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="num">
+                02
+            </div>
+
+            <h3>
+                Hecho en México
+            </h3>
+
+            <p>
+                Producto artesanal con identidad propia
+                y una propuesta diferente.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="num">
+                03
+            </div>
+
+            <h3>
+                Ideal para regalar o compartir
+            </h3>
+
+            <p>
+                Una imagen que genera recuerdos y
+                diferenciación.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="num">
+                42
+            </div>
+
+            <h3>
+                Sabor unico
+            </h3>
+
+            <p>
+                Sabor suave, afrutado y sorprendente
+                desde la primera copa.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =====================================================
+     EXPERIENCIA
+===================================================== -->
 
 <section class="dark" id="experiencia">
-  <div class="eyebrow">Notas de cata & perfil</div>
-  <h2>Una experiencia para descubrir.</h2>
-  <p>Su presencia visual profunda abre la experiencia; su perfil de jamaica aporta una personalidad suave, afrutada y sorprendente.</p>
-  <div class="tasting">
-    <div class="taste"><small>Vista</small><h3>Rojo rubí profundo</h3><p>Una presencia intensa y elegante.</p></div>
-    <div class="taste"><small>Nariz</small><h3>Flor de jamaica & frutos rojos</h3><p>Aromas que invitan a acercarse y descubrir.</p></div>
-    <div class="taste"><small>Boca</small><h3>Acidez inigualable & refrescante</h3><p>Un perfil diferente para disfrutar con calma.</p></div>
-  </div>
+
+    <div class="eyebrow">
+        Notas de cata & perfil
+    </div>
+
+    <h2>
+        Una experiencia para descubrir.
+    </h2>
+
+    <p>
+        Su presencia visual profunda abre la experiencia;
+        su perfil de jamaica aporta una personalidad suave,
+        afrutada y sorprendente.
+    </p>
+
+
+    <div class="tasting">
+
+        <div class="taste">
+
+            <small>
+                Vista
+            </small>
+
+            <h3>
+                Rojo rubí profundo
+            </h3>
+
+            <p>
+                Una presencia intensa y elegante.
+            </p>
+
+        </div>
+
+
+        <div class="taste">
+
+            <small>
+                Nariz
+            </small>
+
+            <h3>
+                Flor de jamaica & frutos rojos
+            </h3>
+
+            <p>
+                Aromas que invitan a acercarse y descubrir.
+            </p>
+
+        </div>
+
+
+        <div class="taste">
+
+            <small>
+                Boca
+            </small>
+
+            <h3>
+                Acidez inigualable & refrescante
+            </h3>
+
+            <p>
+                Un perfil diferente para disfrutar con calma.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =====================================================
+     PRESENTACIONES
+===================================================== -->
 
 <section class="products" id="presentaciones">
-  <div class="eyebrow">Presentaciones</div>
-  <h2>Hay momentos que merecen algo diferente.</h2>
-  <p>Disponible para venta por pieza o por caja de 12 unidades.</p>
-  <div class="productgrid">
-    <!-- PRESENTACIÓN 375 ML -->
-    <div class="product">
-      <div class="ml">375</div>
-      <h3>ml</h3><p>Ideal para regalar, probar o llevar contigo.</p>
-      <img 
-        src="imagenes/pintinto-375ml.png" 
-        alt="Hijo de Tigre Pintinto 375 ml"
-        class="product-image">
+
+    <div class="eyebrow">
+        Presentaciones
     </div>
 
-    <!-- PRESENTACIÓN 750 ML -->
-    <div class="product">
-      <div class="ml">750</div>
-      <h3>ml</h3><p> La presentación protagonista para celebrar.</p>
-      <img 
-        src="imagenes/pintinto-750ml.png"
-        alt="Hijo de Tigre Pintinto 750 ml"
-        class="product-image">
+    <h2>
+        Hay momentos que merecen algo diferente.
+    </h2>
+
+    <p>
+        Disponible para venta por pieza o por caja de 12 unidades.
+    </p>
+
+
+    <div class="productgrid">
+
+
+        <!-- =============================================
+             375 ML
+        ============================================== -->
+
+        <div class="product">
+
+            <div class="ml">
+                375
+            </div>
+
+            <h3>
+                ml
+            </h3>
+
+            <p>
+                Ideal para regalar, probar o llevar contigo.
+            </p>
+
+            <img
+                src="imagenes/pintinto-375ml.png"
+                alt="Hijo de Tigre Pintinto 375 ml"
+                class="product-image"
+            >
+
+        </div>
+
+
+        <!-- =============================================
+             750 ML
+        ============================================== -->
+
+        <div class="product">
+
+            <div class="ml">
+                750
+            </div>
+
+            <h3>
+                ml
+            </h3>
+
+            <p>
+                La presentación protagonista para celebrar.
+            </p>
+
+            <img
+                src="imagenes/pintinto-750ml.png"
+                alt="Hijo de Tigre Pintinto 750 ml"
+                class="product-image"
+            >
+
+        </div>
+
+
     </div>
-  </div>
+
 </section>
+
+
+<!-- =====================================================
+     PROCESO
+===================================================== -->
 
 <section class="dark" id="proceso">
-  <div class="eyebrow">Nuestro proceso</div>
-  <h2>De la flor a tu momento.</h2>
-  <p>Cada botella de Hijo de Tigre Pintinto comienza con la selección de nuestra
-    flor de jamaica y el cuidado puesto en cada etapa de elaboración.
-    Un proceso que busca conservar su esencia y convertirla en una experiencia
-    diferente.</p>
-   <div class="tasting">
-    <div class="taste"><small>01</small><h3>Cosecha a mano</h3>
-      <p>Seleccionamos cuidadosamente la flor de jamaica que da identidad, color y carácter a nuestro Pintinto.</p>
-    </div>
-    <div class="taste"><small>02</small><h3>Fermentación natural</h3>
-      <p>La flor inicia un proceso de transformación que desarrolla gradualmente el perfil característico de nuestra bebida.</p>
+
+    <div class="eyebrow">
+        Nuestro proceso
     </div>
 
-    <div class="taste">
-      <small>03</small><h3>Embotellado selecto</h3>
-      <p>Cada botella recibe el cuidado final antes de llegar a tus manos, lista para formar parte de un momento especial.</p>
+    <h2>
+        De la flor a tu momento.
+    </h2>
+
+    <p>
+        Cada botella de Hijo de Tigre Pintinto comienza
+        con la selección de nuestra flor de jamaica y
+        el cuidado puesto en cada etapa de elaboración.
+        Un proceso que busca conservar su esencia y
+        convertirla en una experiencia diferente.
+    </p>
+
+
+    <div class="tasting">
+
+
+        <!-- 01 -->
+
+        <div class="taste">
+
+            <small>
+                01
+            </small>
+
+            <h3>
+                Cosecha a mano
+            </h3>
+
+            <p>
+                Seleccionamos cuidadosamente la flor de
+                jamaica que da identidad, color y carácter
+                a nuestro Pintinto.
+            </p>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="taste">
+
+            <small>
+                02
+            </small>
+
+            <h3>
+                Fermentación natural
+            </h3>
+
+            <p>
+                La flor inicia un proceso de transformación
+                que desarrolla gradualmente el perfil
+                característico de nuestra bebida.
+            </p>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="taste">
+
+            <small>
+                03
+            </small>
+
+            <h3>
+                Embotellado selecto
+            </h3>
+
+            <p>
+                Cada botella recibe el cuidado final antes
+                de llegar a tus manos, lista para formar
+                parte de un momento especial.
+            </p>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="taste">
+
+            <small>
+                04
+            </small>
+
+            <h3>
+                Cuidado final
+            </h3>
+
+            <p>
+                Revisamos cada detalle para que Pintinto
+                esté listo para acompañar tus momentos
+                especiales.
+            </p>
+
+        </div>
+
+
     </div>
 
-    <div class="taste">
-      <small>04</small><h3>Cuidado final</h3>
-      <p>Revisamos cada detalle para que Pintinto esté listo para acompañar tus momentos especiales.</p>
-    </div>
-  </div>
 </section>
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
 
 <section class="cta" id="contacto">
-  <div class="eyebrow" style="color:#e5bd9a">Hazlo Pintinto</div>
-  <h2>Tu momento merece algo diferente.</h2>
-  <p>Pregunta por disponibilidad y venta por pieza o caja.</p>
-  <a class="btn light" href="https://wa.me/525545849069" target="_blank">WhatsApp · 55 4584 9069</a>
-  <div class="social">
-    <a href="https://www.facebook.com/share/1DVQRUDdqa" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/hijo_de_tigre_pintinto/" target="_blank">Instagram</a>
-  </div>
+
+    <div
+        class="eyebrow"
+        style="color:#e5bd9a"
+    >
+        Hazlo Pintinto
+    </div>
+
+    <h2>
+        Tu momento merece algo diferente.
+    </h2>
+
+    <p>
+        Pregunta por disponibilidad y venta por pieza o caja.
+    </p>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        class="btn light"
+        href="https://wa.me/525545849069"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        WhatsApp · 55 4584 9069
+    </a>
+
+
+    <!-- REDES SOCIALES -->
+
+    <div class="social">
+
+        <a
+            href="https://www.facebook.com/share/1DVQRUDdqa"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Facebook
+        </a>
+
+        <a
+            href="https://www.instagram.com/hijo_de_tigre_pintinto/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
+
+    </div>
+
 </section>
 
-<footer><span>HIJO DE TIGRE PINTINTO · ELIXIR DE JAMAICA</span><span>BEBE CON RESPONSABILIDAD · SOLO PARA MAYORES DE EDAD</span>
-        <span>EVITA EL EXCESO.</span><a href="https://www.alcoholinformate.org.mx/" target="_blank" rel="noopener noreferrer">Alcoholinformate</a>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <span>
+        HIJO DE TIGRE PINTINTO · ELIXIR DE JAMAICA
+    </span>
+
+    <span>
+        BEBE CON RESPONSABILIDAD · SOLO PARA MAYORES DE EDAD
+    </span>
+
+    <span>
+        EVITA EL EXCESO.
+    </span>
+
+    <a
+        href="https://www.alcoholinformate.org.mx/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        ALCOHOLINFORMATE
+    </a>
+
 </footer>
+
+
 </body>
 </html>
