@@ -41,6 +41,11 @@ html{
 }
 
 body{
+   <div class="garrita-fija">
+    <img src="./imagenes/garrita-hijo-de-tigre.png"
+         alt="Hijo de Tigre">
+   </div>
+   
     margin:0;
     background:var(--crema);
     color:var(--negro);
@@ -69,6 +74,22 @@ nav{
     align-items:center;
 
     backdrop-filter:blur(8px);
+}
+
+.garrita-fija {
+    position: fixed;
+    top: 13px;
+    left: 45px;
+    width: 30px;
+    height: 30px;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.garrita-fija img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .logo{
